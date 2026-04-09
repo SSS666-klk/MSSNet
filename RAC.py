@@ -48,16 +48,3 @@ def RAC(pred_A: torch.Tensor, pred_B: torch.Tensor, video_seq: torch.Tensor) -> 
 
     return enhanced_seq
 
-if __name__ == '__main__':
-    import torch
-    import torchprofile
-    import os
-
-
-    predA = torch.randn(1, 256, 256).to(dtype=torch.float32)
-    predB = torch.randn(1, 256, 256).to(dtype=torch.float32)
-    video = torch.randn(10,1, 256, 256).to(dtype=torch.float32)
-
-    mix_video = RAC(predA,predB,video)
-    print(mix_video.shape)
-
